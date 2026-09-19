@@ -1,0 +1,1355 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Kannaiya 🤍</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #090912;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* ================= BACKGROUND ================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 120, 170, 0.12), transparent 30%),
+        radial-gradient(circle at 80% 80%, rgba(150, 100, 255, 0.12), transparent 30%);
+    pointer-events: none;
+    z-index: -2;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,.7) 1px, transparent 1px);
+    background-size: 70px 70px;
+    opacity: .15;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ================= GENERAL ================= */
+
+.screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+}
+
+.small {
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: .65;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-size: clamp(42px, 8vw, 85px);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: clamp(30px, 6vw, 55px);
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: rgba(255,255,255,.82);
+}
+
+.heart {
+    color: #ff8fb5;
+}
+
+/* ================= PASSWORD ================= */
+
+#passwordScreen {
+    min-height: 100vh;
+}
+
+.password-box {
+    max-width: 500px;
+    width: 100%;
+    padding: 45px 30px;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 25px;
+    background: rgba(255,255,255,.04);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 70px rgba(0,0,0,.4);
+}
+
+.password-box h1 {
+    font-size: clamp(35px, 7vw, 60px);
+}
+
+.password-input {
+    width: 100%;
+    padding: 15px 18px;
+    margin: 25px 0 15px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,.2);
+    background: rgba(255,255,255,.07);
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    outline: none;
+}
+
+.password-input::placeholder {
+    color: rgba(255,255,255,.45);
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 28px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,.25);
+    background: rgba(255,255,255,.08);
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: rgba(255,255,255,.17);
+    transform: translateY(-2px);
+}
+
+#error {
+    color: #ff8fac;
+    margin-top: 15px;
+    font-size: 14px;
+    display: none;
+}
+
+/* ================= NAME REVEAL ================= */
+
+.name-reveal {
+    animation: fadeUp 1.5s ease;
+}
+
+.big-number {
+    font-size: clamp(100px, 25vw, 230px);
+    font-weight: bold;
+    line-height: .8;
+    background: linear-gradient(135deg, #fff, #ff9cbd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: .95;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= STORY ================= */
+
+.story {
+    padding: 100px 20px;
+}
+
+.story-card {
+    margin: 35px auto;
+    max-width: 750px;
+    padding: 35px;
+    border-left: 2px solid rgba(255,150,190,.5);
+    background: rgba(255,255,255,.035);
+    border-radius: 0 20px 20px 0;
+    text-align: left;
+}
+
+.story-card .date {
+    color: #ff9fbe;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+/* ================= QUALITIES ================= */
+
+.qualities {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 35px;
+}
+
+.quality {
+    padding: 30px 15px;
+    background: rgba(255,255,255,.045);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 20px;
+    transition: .3s;
+}
+
+.quality:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,.08);
+}
+
+.quality .emoji {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.quality h3 {
+    margin-bottom: 8px;
+}
+
+/* ================= SRIVAARU ================= */
+
+.srivaaru {
+    padding: 100px 20px;
+}
+
+.srivaaru-box {
+    padding: 50px 25px;
+    border-radius: 30px;
+    background: linear-gradient(
+        135deg,
+        rgba(255,150,190,.08),
+        rgba(150,100,255,.08)
+    );
+    border: 1px solid rgba(255,255,255,.1);
+}
+
+.srivaaru-box h2 {
+    font-size: clamp(45px, 10vw, 80px);
+    font-style: italic;
+}
+
+/* ================= INSIDE JOKES ================= */
+
+.jokes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 35px;
+}
+
+.joke {
+    padding: 18px 28px;
+    border-radius: 50px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.12);
+    font-size: 20px;
+}
+
+/* ================= 24 LITTLE THINGS ================= */
+
+.little-section {
+    padding: 100px 20px;
+}
+
+.little-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.little {
+    min-height: 110px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    background: rgba(255,255,255,.045);
+    border: 1px solid rgba(255,255,255,.1);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.little:hover {
+    transform: scale(1.03);
+    background: rgba(255,255,255,.09);
+}
+
+.little-number {
+    font-size: 30px;
+    color: #ff9fbe;
+}
+
+/* ================= PHOTOS ================= */
+
+.photos {
+    padding: 100px 20px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 40px;
+}
+
+.photo-card {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.1);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-card span {
+    display: none;
+}
+
+/* ================= MUSIC ================= */
+
+.music {
+    padding: 100px 20px;
+}
+
+.music-box {
+    padding: 50px 25px;
+    border-radius: 30px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.1);
+}
+
+.music-title {
+    font-size: clamp(35px, 7vw, 65px);
+    margin: 20px 0;
+    font-style: italic;
+}
+
+/* ================= FINAL ================= */
+
+.final {
+    padding: 120px 20px;
+}
+
+.final-message {
+    max-width: 700px;
+    margin: auto;
+    font-size: 20px;
+    line-height: 2;
+}
+
+.signature {
+    margin-top: 35px;
+    font-size: 22px;
+    color: #ff9fbe;
+}
+
+/* ================= POPUP ================= */
+
+.popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.75);
+    backdrop-filter: blur(8px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.popup-box {
+    max-width: 550px;
+    width: 100%;
+    padding: 40px 30px;
+    border-radius: 25px;
+    background: #171421;
+    border: 1px solid rgba(255,255,255,.15);
+    text-align: center;
+}
+
+.popup-box p {
+    margin: 20px 0;
+}
+
+/* ================= FLOATING HEARTS ================= */
+
+.floating-heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 18px;
+    pointer-events: none;
+    animation: floatHeart 7s linear forwards;
+    opacity: .7;
+    z-index: 5;
+}
+
+@keyframes floatHeart {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: .7;
+    }
+
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .screen {
+        padding: 25px 18px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .qualities {
+        grid-template-columns: 1fr;
+    }
+
+    .little-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .photo-card {
+        height: 220px;
+    }
+
+    .story-card {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-card {
+        height: 300px;
+    }
+
+    .little-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= PASSWORD SCREEN ================= -->
+
+<section id="passwordScreen" class="screen">
+
+    <div class="password-box">
+
+        <div class="small">This one's for YOU.</div>
+
+        <h1>A little surprise 🤍</h1>
+
+        <p>
+            Some things are meant to be opened only by the right person.
+        </p>
+
+        <input
+            type="password"
+            id="password"
+            class="password-input"
+            placeholder="Enter the secret"
+        >
+
+        <button class="btn" onclick="checkPassword()">
+            Open it ✨
+        </button>
+
+        <div id="error">
+            Hmm... that's not it. Try again. 🤍
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN WEBSITE ================= -->
+
+<div id="mainContent" class="hidden">
+
+    <!-- NAME REVEAL -->
+
+    <section class="screen">
+
+        <div class="container name-reveal">
+
+            <div class="small">
+                For someone very special
+            </div>
+
+            <div class="big-number">
+                24
+            </div>
+
+            <h1>Happy Birthday,<br>Kannaiya 🤍</h1>
+
+            <p>
+                Maybe this is just a webpage.<br>
+                But every little part of it has a piece of us in it.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FIRST MEETING -->
+
+    <section class="story">
+
+        <div class="container">
+
+            <div class="small">Chapter one</div>
+
+            <h2>
+                We weren't supposed to know
+                what was coming.
+            </h2>
+
+            <div class="story-card">
+
+                <div class="date">
+                    My Village
+                </div>
+
+                <p>
+                    Our first meeting was one of those completely unexpected
+                    moments that didn't look important at the time.
+                </p>
+
+                <br>
+
+                <p>
+                    We met through common friends at My Village.
+                    Neither of us probably knew that this random meeting
+                    would eventually become such an important part of our lives.
+                </p>
+
+            </div>
+
+
+            <div class="story-card">
+
+                <div class="date">
+                    And then...
+                </div>
+
+                <p>
+                    There was that legendary conversation where I was
+                    apparently going to find you a girl. 😂
+                </p>
+
+                <br>
+
+                <p>
+                    Funny how life sometimes has a completely different
+                    plan from the one we think we're making.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 24/03/2021 -->
+
+    <section class="screen">
+
+        <div class="container">
+
+            <div class="small">
+                The date everything quietly changed
+            </div>
+
+            <div class="big-number">
+                24
+            </div>
+
+            <h2>
+                24 / 03 / 2021
+            </h2>
+
+            <p>
+                A date that probably looked ordinary to the world...
+                but became a part of our story.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- WHAT SHE LIKES -->
+
+    <section class="story">
+
+        <div class="container">
+
+            <div class="small">
+                Three things
+            </div>
+
+            <h2>
+                Things about you I secretly adore.
+            </h2>
+
+            <div class="qualities">
+
+                <div class="quality">
+                    <div class="emoji">👀</div>
+                    <h3>Your eyes</h3>
+                    <p>
+                        There is something about them that
+                        I still can't completely explain.
+                    </p>
+                </div>
+
+                <div class="quality">
+                    <div class="emoji">😊</div>
+                    <h3>Your smile</h3>
+                    <p>
+                        Somehow it makes things feel
+                        lighter.
+                    </p>
+                </div>
+
+                <div class="quality">
+                    <div class="emoji">🤍</div>
+                    <h3>Your presence</h3>
+                    <p>
+                        You proved that presence does not only mean physically 
+                        but also can feel the presence when far away.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SRIVAARU -->
+
+    <section class="srivaaru">
+
+        <div class="container">
+
+            <div class="srivaaru-box">
+
+                <div class="small">
+                    A name that feels different
+                </div>
+
+                <h2>
+                    Srivaaru.
+                </h2>
+
+                <p>
+                    It's not just a name.
+                    <br>
+                    It shows all my respect and love for you.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MATURITY -->
+
+    <section class="story">
+
+        <div class="container">
+
+            <div class="small">
+                Something I noticed
+            </div>
+
+            <h2>
+                You've always been...
+            </h2>
+
+            <div class="story-card">
+
+                <p>
+                    Mature.
+                </p>
+
+                <br>
+
+                <p>
+                    Practical.
+                </p>
+
+                <br>
+
+                <p>
+                    Somehow you look very similary to my father who looks at things differently,
+                    thinks things through, and somehow manages
+                    to stay grounded. And you understand each and every person very well.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INSIDE JOKES -->
+
+    <section class="screen">
+
+        <div class="container">
+
+            <div class="small">
+                Obviously, this had to be here.
+            </div>
+
+            <h2>
+                Our very serious vocabulary.
+            </h2>
+
+            <div class="jokes">
+
+                <div class="joke">
+                    barreee 🐃
+                </div>
+
+                <div class="joke">
+                    pandiii 🐖
+                </div>
+
+            </div>
+
+            <p style="margin-top:35px;">
+                Because apparently normal names were never
+                enough for us.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FUTURE -->
+
+    <section class="story">
+
+        <div class="container">
+
+            <div class="small">
+                Somewhere between then and now
+            </div>
+
+            <h2>
+                We started talking about tomorrow.
+            </h2>
+
+            <div class="story-card">
+
+                <p>
+                    We talk about our future together.
+                </p>
+
+                <br>
+
+                <p>
+                    We have our own dreams, our own careers,
+                    our own paths...
+                    but somehow we still imagine them
+                    running alongside each other.
+                </p>
+
+            </div>
+
+            <div class="story-card">
+
+                <p>
+                    Supporting each other in our own career paths.
+                </p>
+
+                <br>
+
+                <p>
+                    Building our own lives.
+                    Growing separately.
+                    And somehow growing together too.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ATTACHMENT -->
+
+    <section class="screen">
+
+        <div class="container">
+
+            <div class="small">
+                The funny part
+            </div>
+
+            <h2>
+                We never really noticed it happening.
+            </h2>
+
+            <p>
+                Somewhere between the conversations,
+                jokes, plans, arguments, support,
+                and all those ordinary moments...
+            </p>
+
+            <br>
+
+            <p>
+                we got attached.
+            </p>
+
+            <br>
+
+            <p>
+                And now we're here.
+                Building our lives in parallel.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- 19/01/2026 -->
+
+    <section class="screen">
+
+        <div class="container">
+
+            <div class="small">
+                One more date
+            </div>
+
+            <div class="big-number">
+                19
+            </div>
+
+            <h2>
+                19 / 01 / 2026
+            </h2>
+
+            <p>
+                I know this is one of those dates
+                we will remember.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHOTOS -->
+
+    <section class="photos">
+
+        <div class="container">
+
+            <div class="small">
+                A few pieces of us
+            </div>
+
+            <h2>
+                Memories 📸
+            </h2>
+
+            <p>
+                Some moments to cherish.
+            </p>
+
+            <div class="photo-grid">
+
+                <div class="photo-card">
+                    <img src="photos/photo1.jpeg" alt="Memory 1">
+                </div>
+
+                <div class="photo-card">
+                    <img src="photos/photo2.jpeg" alt="Memory 2">
+                </div>
+
+                <div class="photo-card">
+                    <img src="photos/photo3.jpeg" alt="Memory 3">
+                </div>
+
+                <div class="photo-card">
+                    <img src="photos/photo4.jpeg" alt="Memory 4">
+                </div>
+
+                <div class="photo-card">
+                    <img src="photos/photo5.jpeg" alt="Memory 5">
+                </div>
+
+                <div class="photo-card">
+                    <img src="photos/photo6.jpeg" alt="Memory 6">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 24 LITTLE THINGS -->
+
+    <section class="little-section">
+
+        <div class="container">
+
+            <div class="small">
+                Since you're turning 24...
+            </div>
+
+            <h2>
+                24 little things.
+            </h2>
+
+            <p>
+                Click them. 🤍
+            </p>
+
+            <div id="littleGrid" class="little-grid"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MUSIC -->
+
+    <section class="music">
+
+        <div class="container">
+
+            <div class="music-box">
+
+                <div class="small">
+                    If this page had a soundtrack...
+                </div>
+
+                <div class="music-title">
+                    Ammadi
+                </div>
+
+                <p>
+                    I want you to<i>Listen it</i>.
+                </p>
+
+                <br>
+
+                <a
+                    class="btn"
+                    href="https://www.youtube.com/results?search_query=Ammadi+Hi+Nanna"
+                    target="_blank"
+                    style="display:inline-block;text-decoration:none;"
+                >
+                    🎵 Listen to Ammadi
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL MESSAGE -->
+
+    <section class="final">
+
+        <div class="container">
+
+            <div class="small">
+                And finally...
+            </div>
+
+            <h2>
+                Happy 24th, Kannaiya. 🤍
+            </h2>
+
+            <div class="final-message">
+
+                <p>
+                    I don't know what this year has planned for you.
+                </p>
+
+                <br>
+
+                <p>
+                    But I hope it gives you reasons to smile,
+                    moments worth remembering, and our Happy
+                    moments together.
+                </p>
+
+                <br>
+
+                <p>
+                    I wish you all the happiness that you deserve.
+                </p>
+
+                <br>
+
+                <p>
+                    IK we will keep supporting each other,
+                    building our own lives, and somehow
+                    continuing to build something beautiful
+                    alongside them.
+                </p>
+
+                <br>
+
+                <p>
+                    And somewhere in all of that...
+                    <br>
+                    IK there's always a little space for me too. 
+                    And I'm really sorry when I unintentionally hurt you.
+                </p>
+
+                <div class="signature">
+                    — Spoorthi 🤍
+                </div>
+
+                <br><br>
+
+                <button class="btn" onclick="showFinalSurprise()">
+                    One last thing...
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- ================= POPUP ================= -->
+
+<div id="popup" class="popup">
+
+    <div class="popup-box">
+
+        <h2>
+            Happy 24th Birthday 🤍
+        </h2>
+
+        <p>
+            Whatever life brings next, I hope we keep growing,
+            laughing, supporting each other, and building our
+            lives side by side. And I promise you to be always
+            to be by your side.
+        </p>
+
+        <p>
+            And yes...
+            <br>
+            you are still my chinnapilloda.
+        </p>
+
+        <button class="btn" onclick="closePopup()">
+            Close 🤍
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* ================= PASSWORD ================= */
+
+function checkPassword() {
+
+    const password = document.getElementById("password").value;
+    const error = document.getElementById("error");
+
+    if (password === "2424") {
+
+        document.getElementById("passwordScreen").classList.add("hidden");
+        document.getElementById("mainContent").classList.remove("hidden");
+
+        createHearts();
+
+    } else {
+
+        error.style.display = "block";
+
+    }
+}
+
+
+/* ENTER KEY FOR PASSWORD */
+
+document.getElementById("password").addEventListener("keypress", function(event) {
+
+    if (event.key === "Enter") {
+        checkPassword();
+    }
+
+});
+
+
+/* ================= 24 LITTLE THINGS ================= */
+
+const littleThings = [
+
+    "The unexpected My Village meeting that started all of this.",
+
+    "The fact that we met through common friends and had no idea what was coming.",
+
+    "Our legendary conversation about me finding you a girl. 😂",
+
+    "24/03/2021 — a date that quietly became part of our story.",
+
+    "Your maturity.",
+
+    "Your practical way of looking at things.",
+
+    "Your eyes — which I still can remember.",
+
+    "Your smile — which somehow makes things lighter.",
+
+    "Your presence — which is enough.",
+
+    "The fact that 'barreee' somehow became normal vocabulary.",
+
+    "And obviously... 'pandiii.' 🐖",
+
+    "I will never get tired of irritating you.",
+
+    "And somehow you should have to bare it you have got no other chance.",
+
+    "The fact that we can have completely different dreams and still cheer for each other.",
+
+    "Talking about our future together.",
+
+    "Building our lives parallel to each other.",
+
+    "The strange way we never noticed ourselves getting this attached.",
+
+    "The comfort of knowing you're there.",
+
+    "The memories we already have.",
+
+    "The memories we haven't made yet.",
+
+    "The fact that I can imagine you in my future.",
+
+    "19/01/2026 — unforgetable.",
+
+    "Everything that happened between then and now.",
+
+    "And simply... you. 🤍"
+
+];
+
+
+const littleGrid = document.getElementById("littleGrid");
+
+littleThings.forEach((thing, index) => {
+
+    const card = document.createElement("div");
+
+    card.className = "little";
+
+    card.innerHTML = `
+        <div class="little-number">${index + 1}</div>
+    `;
+
+    card.onclick = function() {
+        showLittleThing(thing);
+    };
+
+    littleGrid.appendChild(card);
+
+});
+
+
+/* ================= LITTLE THING POPUP ================= */
+
+function showLittleThing(text) {
+
+    const popup = document.getElementById("popup");
+    const popupBox = popup.querySelector(".popup-box");
+
+    popupBox.innerHTML = `
+        <div style="font-size:45px;margin-bottom:15px;">🤍</div>
+
+        <p style="font-size:20px;">
+            ${text}
+        </p>
+
+        <button class="btn" onclick="closePopup()">
+            Close
+        </button>
+    `;
+
+    popup.style.display = "flex";
+
+}
+
+
+/* ================= FINAL POPUP ================= */
+
+function showFinalSurprise() {
+
+    const popup = document.getElementById("popup");
+    const popupBox = popup.querySelector(".popup-box");
+
+    popupBox.innerHTML = `
+
+        <h2>
+            Happy 24th Birthday 🤍
+        </h2>
+
+        <p>
+            Whatever life brings next, I hope we keep growing,
+            laughing, supporting each other, and building our
+            lives side by side.
+        </p>
+
+        <p>
+            And yes...
+            <br>
+            you are still a barreee. 🐃
+        </p>
+
+        <button class="btn" onclick="closePopup()">
+            Close 🤍
+        </button>
+
+    `;
+
+    popup.style.display = "flex";
+
+}
+
+
+/* ================= CLOSE POPUP ================= */
+
+function closePopup() {
+
+    document.getElementById("popup").style.display = "none";
+
+}
+
+
+/* ================= FLOATING HEARTS ================= */
+
+function createHearts() {
+
+    setInterval(() => {
+
+        const heart = document.createElement("div");
+
+        heart.className = "floating-heart";
+
+        heart.innerHTML = Math.random() > 0.5 ? "🤍" : "♡";
+
+        heart.style.left = Math.random() * 100 + "vw";
+
+        heart.style.fontSize =
+            (12 + Math.random() * 15) + "px";
+
+        heart.style.animationDuration =
+            (5 + Math.random() * 4) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 9000);
+
+    }, 900);
+
+}
+
+</script>
+
+</body>
+</html>
+```
